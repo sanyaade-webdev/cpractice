@@ -1,4 +1,6 @@
 #include<stdio.h>
+#pragma pack(1)
+//or use __attribute__((packed)) to remove structure padding
 struct data
 {
     short i;
@@ -12,7 +14,7 @@ struct data1
     int a;
     char b,c,d,e,h;
     long long int g;
-}__attribute__((packed)) item2;
+} item2;
 
 int main()
 {
