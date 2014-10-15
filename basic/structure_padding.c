@@ -1,19 +1,25 @@
 #include<stdio.h>
+#pragma pack(1)
+//or use __attribute__((packed)) to remove structure padding
 struct data
 {
-    int a:3;
-    char b:4,c:4,d:4,e:4,h:4;
-    double f;
-    long int g:16;
+    short i;
+    int a;
+    char b,c,d,e,h;
+    long long int g;
 }item1;
+struct data1
+{
+    short i;
+    int a;
+    char b,c,d,e,h;
+    long long int g;
+} item2;
 
 int main()
 {
-    int c=8;
-item1.a=4;
-printf("hello world\n");
-printf("a = %d\n",item1.a);
-printf("size of structure is = %d\n",sizeof(item1));
+printf("size of structure with padding is = %d\n",sizeof(item1));
+printf("size of structure without padding is = %d\n",sizeof(item2));
 
 
 return 0;
