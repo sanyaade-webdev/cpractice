@@ -5,6 +5,7 @@ struct data
 {
     short i;
     int a;
+    int z;
     char b,c,d,e,h;
     long long int g;
 }item1;
@@ -19,7 +20,7 @@ struct data1
 int main()
 {
 printf("size of structure with padding is = %d\n",sizeof(item1));
-printf("size of structure without padding is = %d\n",sizeof(item2));
+printf("size of structure without padding is = %d\n",sizeof(long long));
 
 
 return 0;
