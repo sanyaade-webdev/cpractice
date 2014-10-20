@@ -8,6 +8,7 @@ int main()
 {
 data.a=7;//bits 0111 is saved in a
 data.b=9;
+//printf("size of A ==%d\n",&(data.a));
 //0 indicates sign bit so it is treated as +ve integer
 //1 indicates -ve sign so a=10 represented 1111 in binary so it prints -1 .
 printf("value of A ==%d\n",data.a);
