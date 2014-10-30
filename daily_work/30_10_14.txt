@@ -15,4 +15,8 @@ Snaps khichian te fer asi AA gaye.
 BAAHAR AA Ke snaps khichiaan.
 Fir Flat wich AA GAYE.
 	#SANFOUNDRY.COM ton C questions kite.
-	#{Variable Names} de mcq kite. 		
+	#{Variable Names_1} done. 		
+	#{Variable_NAMES_2} done.
+	#{data_types_sizes_1} done.
+	#{data_types_sizes_2} done.
+	#{constants_1} done
