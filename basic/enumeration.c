@@ -11,16 +11,16 @@ int main()
    while(i++<5)
    {
 	  printf("enter the color \n");
-	  scanf("%d",&choice);
-	  printf("the color and values are %d\n",black);
+	  scanf("%d",&color);
+	  printf("the color and values are %d\n",color);
    }
    i=0;
    ///////////////// values are initialized to some particular value /////////////
    while(i++<3)
    {
 	  printf("enter the level\n");
-	  scanf("%d",&choice);
-	  switch(choice)
+	  scanf("%d",&current_level);
+	  switch(current_level)
 	  {
 		 case 100:
 			printf("level is low\n");
