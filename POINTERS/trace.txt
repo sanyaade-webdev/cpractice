@@ -1,0 +1,59 @@
+execve("./a.out", ["./a.out"], [/* 35 vars */]) = 0
+brk(0)                                  = 0x1088000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1aee11e000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=176330, ...}) = 0
+mmap(NULL, 176330, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f1aee0f2000
+close(3)                                = 0
+open("/usr/lib64/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220\244E\2350\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=994256, ...}) = 0
+mmap(0x309d400000, 3171440, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x309d400000
+mprotect(0x309d4e8000, 2097152, PROT_NONE) = 0
+mmap(0x309d6e8000, 40960, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe8000) = 0x309d6e8000
+mmap(0x309d6f2000, 83056, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x309d6f2000
+close(3)                                = 0
+open("/lib64/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260Q\200\2310\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=603096, ...}) = 0
+mmap(0x3099800000, 2633960, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x3099800000
+mprotect(0x3099883000, 2093056, PROT_NONE) = 0
+mmap(0x3099a82000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x82000) = 0x3099a82000
+close(3)                                = 0
+open("/lib64/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\240(\0\2320\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=89592, ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1aee0f1000
+mmap(0x309a000000, 2182520, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x309a000000
+mprotect(0x309a015000, 2093056, PROT_NONE) = 0
+mmap(0x309a214000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x14000) = 0x309a214000
+close(3)                                = 0
+open("/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260\27\302\2300\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=2076800, ...}) = 0
+mmap(0x3098c00000, 3896632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x3098c00000
+mprotect(0x3098dad000, 2097152, PROT_NONE) = 0
+mmap(0x3098fad000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1ad000) = 0x3098fad000
+mmap(0x3098fb3000, 17720, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x3098fb3000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1aee0f0000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1aee0ee000
+arch_prctl(ARCH_SET_FS, 0x7f1aee0ee740) = 0
+mprotect(0x3098fad000, 16384, PROT_READ) = 0
+mprotect(0x3099a82000, 4096, PROT_READ) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1aee0ed000
+mprotect(0x309d6e8000, 32768, PROT_READ) = 0
+mprotect(0x3098a21000, 4096, PROT_READ) = 0
+munmap(0x7f1aee0f2000, 176330)          = 0
+fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 0), ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1aee11d000
+write(1, "\n", 1)                       = 1
+write(1, "Array's element     Memory addre"..., 35) = 35
+write(1, "--------------------------------"..., 35) = 35
+write(1, "\t92\t\t0x7fffbb7aa540\n", 20) = 20
+write(1, "\t81\t\t0x7fffbb7aa544\n", 20) = 20
+write(1, "\t70\t\t0x7fffbb7aa548\n", 20) = 20
+write(1, "\t69\t\t0x7fffbb7aa54c\n", 20) = 20
+write(1, "\t58\t\t0x7fffbb7aa550\n------------"..., 55) = 55
+exit_group(0)                           = ?
