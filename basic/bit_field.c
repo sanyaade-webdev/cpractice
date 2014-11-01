@@ -8,13 +8,13 @@ int main()
 {
 data.a=7;//bits 0111 is saved in a
 data.b=9;
-int c=data.a*data.b;
+//int c=data.a*data.b;
 //printf("size of A ==%d\n",&(data.a));
 //0 indicates sign bit so it is treated as +ve integer
 //1 indicates -ve sign so a=10 represented 1111 in binary so it prints -1 .
 printf("value of A ==%d\n",data.a);
 printf("value of B ==%d\n",data.b);
-printf("value of c ==%d\n",c);
+//printf("value of c ==%d\n",c);
 /*value of b is -7 because compiler uses 2's complement method to display integer
   first 9 is converted into binary 1001 it takes first bit i.e 1 as sign bit .
   1 -- -ve
