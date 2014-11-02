@@ -1,0 +1,24 @@
+
+RCS file: server.c,v
+Working file: server.c
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+Implementation of server.
+Protocol : TCP
+Domain   : AF_UNIX
+----------------------------
+revision 1.2
+date: 2014/08/25 05:19:58;  author: root;  state: Exp;  lines: +10 -10
+Server successfully implemented.
+Server accepts requests and sends responses.
+----------------------------
+revision 1.1
+date: 2014/08/25 05:03:27;  author: root;  state: Exp;
+Initial revision
+=============================================================================

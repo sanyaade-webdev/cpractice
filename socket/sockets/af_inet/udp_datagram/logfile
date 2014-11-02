@@ -1,0 +1,25 @@
+
+RCS file: server.c,v
+Working file: server.c
+head: 1.2
+branch:
+locks: strict
+	root: 1.2
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+Implementation fo server.
+Protocol : UDP
+Domain   : AF_INET
+----------------------------
+revision 1.2	locked by: root;
+date: 2014/08/25 05:13:38;  author: root;  state: Exp;  lines: +1 -0
+Server is able to accpet client requests and send them response.
+Server serves one client at a time.
+----------------------------
+revision 1.1
+date: 2014/08/25 05:07:54;  author: root;  state: Exp;
+Initial revision
+=============================================================================
