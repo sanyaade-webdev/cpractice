@@ -1,0 +1,22 @@
+
+RCS file: server.c,v
+Working file: server.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+implemented sockets for datagram under af_unix domain.
+Works ok, but I have some queries.
+Queries : 
+	If more than one request come, then server's sendto call returns bad file descriptor with each request it servers, but the messages are exchanged properly
+	The server socket fd and the client socket fd are same, how come ?
+----------------------------
+revision 1.1	locked by: root;
+date: 2014/08/22 20:27:03;  author: root;  state: Exp;
+Initial revision
+=============================================================================
