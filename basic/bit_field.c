@@ -7,7 +7,7 @@ int b:4;
 int main()
 {
 data.a=7;//bits 0111 is saved in a
-data.b=9;
+data.b=16;
 //int c=data.a*data.b;
 //printf("size of A ==%d\n",&(data.a));
 //0 indicates sign bit so it is treated as +ve integer

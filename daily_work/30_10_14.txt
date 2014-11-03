@@ -20,3 +20,9 @@ Fir Flat wich AA GAYE.
 	#{data_types_sizes_1} done.
 	#{data_types_sizes_2} done.
 	#{constants_1} done
+
+***************Expenses****************
+kamal toll tax    -  400
+blue dart courier -  410
+lunch             -  50
+***************************************
