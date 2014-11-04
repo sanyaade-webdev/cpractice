@@ -1,5 +1,5 @@
 #include<stdio.h>
-#pragma pack(1)
+//#pragma pack(1)
 //or use __attribute__((packed)) to remove structure padding
 struct data
 {
@@ -19,8 +19,8 @@ struct data1
 
 int main()
 {
-printf("size of structure with padding is = %d\n",sizeof(item1));
-printf("size of structure without padding is = %d\n",sizeof(long long));
+printf("size of structure with padding is = %d\n",sizeof(item2));
+printf("size of structure without padding is = %d\n",sizeof(long long int));
 
 
 return 0;
