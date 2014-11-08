@@ -1,0 +1,20 @@
+main aj speech therapy session lagaun gya lekin sir nahi aaye.
+main fir lab aa gya
+	#aj varun sir di serial port di class lagai.
+	#C primer wichon PAGE 197 ton read karna shuru kita	
+	#siddique sir di voip di class lagai.Sir ne aj C de concepts hi dase.
+	#mere kolon sir ne puchya ke tun meri company wich apply kita c.
+	#C wich array & pointer wich difference,difference between malloc and calloc,difference between header and library puchya.
+	#fir asi lunch karn gaye.park wich saare ik kudi val vekh rahe c.ohdaa yaar vi saade val vekhi jaa reha c.
+	#till 4:33 read till page 216 <logical operators>
+	#completed the 7th chapter 
+	#STARTED chapter 9th ARRAYS & POINTERS
+	read till page 327
+
+
+
+
+
+
+******************** EXPENSES ************************
+			tea = 7
