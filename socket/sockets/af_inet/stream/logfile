@@ -1,0 +1,21 @@
+
+RCS file: server.c,v
+Working file: server.c
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+Implementation of server for stream socket ( TCP ) under AF_INET domain.
+----------------------------
+revision 1.2
+date: 2014/08/25 04:55:04;  author: root;  state: Exp;  lines: +1 -0
+Server successfully implemented.
+----------------------------
+revision 1.1
+date: 2014/08/25 04:53:24;  author: root;  state: Exp;
+Initial revision
+=============================================================================
