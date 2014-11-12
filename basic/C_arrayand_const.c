@@ -1,3 +1,4 @@
+//PAGE 334
 #include <stdio.h>
 #define SIZE 5
 void show_array(const double ar[], int n);
