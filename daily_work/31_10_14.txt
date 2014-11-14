@@ -1,0 +1,3 @@
+	#pointer array example suggested by kamal
+	#view Linux programming interface to understand IPC and SOCKETS
+
