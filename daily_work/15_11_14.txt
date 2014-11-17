@@ -1,0 +1,4 @@
+CTM_threads_&_processes
+	#learned about processses and threads
+	#refer saved pdf and copy green page -----> 8
+see zeecher on youtube

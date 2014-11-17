@@ -1,3 +1,4 @@
-	#pointer array example suggested by kamal
+CTM_ipc&socket	
+    #pointer array example suggested by kamal
 	#view Linux programming interface to understand IPC and SOCKETS
 

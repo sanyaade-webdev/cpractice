@@ -1,0 +1,24 @@
+CTM_process page 24
+CTM_Compilation_process_of_C_program
+ 	# task_struct ---> linux/sched.h
+	# task_struct is pointed by another structure called thread_info in----> x86/asm/thread_info.h
+	# maximum processes that can be execute ---> /proc/sys/kernel/pid_max
+	# maximum threads -----> /proc/sys/kernel/threads_max
+	# process states --> 5 states
+			*TASK_RUNNING
+			*TASK_INTERRUPTIBLE
+			*TASK_UNINTERRUPTIBLE
+			*__TASK_TRACED
+			*__TASK_STOPPED
+	# Diagram of process states ----> page 28 [refer LKD]
+	# Read and Understand C compilation stages from http://www.linuxjournal.com/content/examining-compilation-process-part-1 and http://www.linu      xjournal.com/content/examining-compilation-process-part-2
+	# Bookmarked linux lectures from http://www.compsci.hunter.cuny.edu/~sweiss/course_materials/unix_lecture_notes
+	# gcc -E test.c > preprocessor.txt //this will save the work done in preprocessor stage of compilation process.
+	  -- Preprocessing stage do three tasks:
+		* expansion of macros e.g #define a 5 it will replace all the occurences of a with 5 in program
+		* clearing commented lines from the code.
+		* placing the code of header files included in C program as it is.
+	# gcc --save-temps test.c // it will save all the files which are built during compilation process of a c program.
+		* test.i ----> it will include preprocessor expanded code and expansion of macros and deletion of comments in c program.
+		* test.s ----> it will generate assembly code of our c program without any libraries.
+		* test.o ----> it will include object code with or without linker.If we use -c option during compilation then compiler generate object            file without the linker involved.  
