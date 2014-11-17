@@ -1,0 +1,82 @@
+CTM_more_on_processes_init-process_symbols-exporting_symbol-table_threads
+ENQUIRE_initscripts_exceptions_volatile
+	# Process context // process currently executing on cpu has process context which involves all related info about a process
+	# A Process execute in KERNEL SPACE only on two conditions ---- EXCEPTIONS and SYSTEM CALLS
+	# INIT Process is parent of all processes. It has PID = 1.It is invoked by kernel in last stage of booting process.
+	# structure of init process is called INIT_TASK which is object of struct task_struct and defined in /usr/src/kernels/linux-2.6.32.63/arch/x      86/kernel/init_task.c
+	# BOOTING PROCESS partially understood 
+	# from INTERNET --> linux init script and runlevels.
+	# systemd in /usr/lib/systemd/system
+	# what is service and target reference---> http://www.linux.com/learn/tutorials/788613-understanding-and-using-systemd
+	# SYMBOLS
+			* why symbols are exported  ?
+			* SYMBOLS may be data objects or functions.
+			* symbols are visible at 3 levels
+				# static ---> visible only in their own source code
+				# external ----> visible to any other code built into kernel space
+				# exported ----> visible and available to any loadable modules
+			* PRINTK and jiffies are symbols and exported by kernel in /usr/src/kernels/linux-2.6.32.63/kernel/printk.c
+			* and /usr/src/kernels/linux-2.6.32.63/arch/kernel/time.c
+i			* EXPORT_SYMBOL(printk) is used to export symbol to any loadable module.
+			* EXPORT_SYMBOL_GPL(printk) is used to export symbol to only GPL-licenced modules.
+	# refer ----> http://www.linux.com/learn/linux-career-center/31161-the-kernel-newbie-corner-kernel-symbols-whats-available-to-your-module-wh      at-isnt
+	# If you declare three variable like 
+		{
+			static int a=15;
+				int b=20;
+				int c=30;
+			EXPORT_SYMBOL(c) ;
+		}
+		you can check the symbols by running the command ---> nm module_name.ko
+			it will show 000000000000 D b //it signifies that b is global but not exported
+						 000000000004 D c //it signifies that c is global as well as exported and has entry in kernel symbol table.
+	# TO CHECK ALL SYMBOLS EXPORTED IN KERNEL SYMBOL TABLE USE COMMAND -----> cat /proc/kallsyms
+	------------------------------------------------------------------------------------------------------------------------------------
+	# To create a new process in linux it uses two functions --- fork() and exec () 
+			* exec() is a family of functions such as execlp,execv(),execvp() and execle()
+	# fork() creates child process which is copy of current task.
+	# exec() loads new executable in address space and starts executing it.(see page 18 of Gcopy)
+	# COPY_ON_WRITE //it saves overhead of copying all the data of parent process into child process
+			* when both try to write on the same address space then unique copy of data object to parent and child
+			* if they want to read then they read from shared address space.
+			* but if child immediately calls exec() function then it is wastage of memory to copy everything of parent process if there is no                 use.
+	# fork(),vfork() and __clone() all call to CLONE() system call which further invokes DO_FORK() defined in kernel/fork.c
+	# DO_FORK() uses function COPY_PROCESS() calls dup_task_struct which creates new kernel stack and task_struct for new process.
+	# some values are changed in task_struct and most of values are remain unchanged.
+	# child state is set to TASK_UNINTERRUPTIBLE
+	# ALLOC_PID() assigns new pid to newly created process.
+	# according to various FLAGS passed to clone() system call it either duplicates or shares 
+			* open files
+			* filesystem information
+			* signal handlers
+			* process address space
+			* namespace
+	# FINALLY,copy_process() returns pointer to the new child to the calling process.
+	# -------- Child always run first because if it have to do execv then there is no headache of copying parent's resources to it.
+
+	                    ----------------------- THREADS ------------------------------
+	# threads enable concurrent programming and shares the address space of a process.
+	# In Linux there is no special implementation of threads.THEY ARE TREATED AS NORMAL PROCESSES AND NO SPECIAL STRUCTURES OR SCHEDULING SEMANI	  TS TO IMPLEMENT THREADS.
+	# EACH THREAD HAS A UNIQUE TASK_STRUCT BUT appear as a normal process to kernel.
+	# ----------- CREATION OF THREADS ---------------------  REFER- PAGE 21 OF GCOPY
+			* Created as normal processes through fork()
+			* special FLAGS are passsed to clone() call which shares resources on behalf of these FLAGS 	
+					* clone (CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND); 	
+					* CLONE_VM ---> address space is shared
+					* CLONE_FS ---> Filesysytem resources shared 
+					* CLONE_FILES----> File descriptors shared
+					* CLONE_SIGHAND ----> Signal handlers are shared
+			* OTHER CLONE FLAGS ARE DEFINED IN LINUX/SCHED.H	
+	# KERNEL THREADS
+			*Background operations are performed .
+			*These are similar to standard processes which exist solely in kernel space.
+		------- Difference between Kernel Threads and Normal processes
+					* They do not have Address Space.
+					* They are not context switched.
+					* They are schedulable like normal processes.
+					* They are preemptable means some higher priority can over ride their execution.
+	# TO VIEW KERNEL THREADS -----> 	ps -ef
+			* Kernel threads are created at boot time by some other kernel thread.
+			* Kthreadd invokes all other Kernel threads.
+			* HEADER FILE FOR IN WHICH KERNEL THREADS are DEFINED linux/kthread.h
+   ----------------------- PROCESS TERMINATION ---------------------------------
